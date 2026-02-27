@@ -1,0 +1,207 @@
+/* ============================================
+   PROJECTS PAGE STYLES - AESTHETIC & MODERN
+   ============================================ */
+
+.projects-container {
+    padding: 100px 20px 60px; /* Space for the navbar */
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-title {
+    font-size: 3.5em;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+    animation: fadeInDown 0.8s ease-out forwards;
+    text-align: center;
+}
+
+.page-subtitle {
+    font-size: 1.2em;
+    color: #FFD43B;
+    margin-bottom: 50px;
+    animation: fadeInDown 1s ease-out forwards;
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    width: 100%;
+}
+
+/* Glassmorphism Card Style */
+.project-card {
+    background: rgba(255, 255, 255, 0.05); /* very transparent */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUpFade 0.8s forwards;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(255, 212, 59, 0.2);
+    border-color: rgba(255, 212, 59, 0.5);
+}
+
+.project-header {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.live {
+    background: rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+    border: 1px solid #2ecc71;
+}
+
+.wip {
+    background: rgba(241, 196, 15, 0.2);
+    color: #f1c40f;
+    border: 1px solid #f1c40f;
+}
+
+.project-body {
+    padding: 25px 20px;
+    flex-grow: 1;
+}
+
+.project-body h2 {
+    font-size: 1.8em;
+    color: #FFD43B;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.project-body p {
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-tags span {
+    background: rgba(255, 212, 59, 0.1);
+    color: #FFD43B;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85em;
+    border: 1px solid rgba(255, 212, 59, 0.3);
+}
+
+.project-footer {
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.btn-primary {
+    background: #FFD43B;
+    color: #000;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #ffeb3b;
+    box-shadow: 0 0 15px rgba(255, 212, 59, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animations for cards */
+.project-card:nth-child(1) { animation-delay: 0.2s; }
+.project-card:nth-child(2) { animation-delay: 0.4s; }
+.project-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.3em;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}

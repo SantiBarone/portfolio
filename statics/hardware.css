@@ -1,0 +1,166 @@
+/* ============================================
+   HARDWARE PAGE STYLES - HIGH TECH CYBER
+   ============================================ */
+
+.hardware-container {
+    padding: 100px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hw-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Glitch Title Effect */
+.glitch-title {
+    font-size: 3.8em;
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 212, 59, 0.5);
+    animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.hw-subtitle {
+    font-size: 1.4em;
+    color: #FFD43B;
+    margin-top: 5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-family: monospace;
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.hw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+    width: 100%;
+}
+
+.hw-card {
+    perspective: 1000px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUpFade 0.8s forwards;
+}
+
+.hw-card:nth-child(1) { animation-delay: 0.2s; }
+.hw-card:nth-child(2) { animation-delay: 0.4s; }
+.hw-card:nth-child(3) { animation-delay: 0.6s; }
+
+.hw-card-inner {
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hw-card-inner:hover {
+    transform: translateY(-8px);
+    border-color: #FFD43B;
+    box-shadow: 0 0 25px rgba(255, 212, 59, 0.2), inset 0 0 15px rgba(255, 212, 59, 0.1);
+}
+
+/* Circuit pattern effect at top of card */
+.hw-circuit-top {
+    height: 6px;
+    width: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        #FFD43B,
+        #FFD43B 10px,
+        #0a0a0a 10px,
+        #0a0a0a 20px
+    );
+    opacity: 0.7;
+}
+
+.hw-card-inner:hover .hw-circuit-top {
+    opacity: 1;
+    animation: slideBg 1s linear infinite;
+}
+
+@keyframes slideBg {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 0; }
+}
+
+.hw-content {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.hw-icon {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #FFD43B;
+    background: rgba(255, 212, 59, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 212, 59, 0.2);
+}
+
+.hw-content h3 {
+    font-size: 1.6em;
+    color: #fff;
+    margin-bottom: 15px;
+    font-family: monospace;
+}
+
+.hw-content p {
+    color: #aaa;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.hw-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.hw-tag {
+    background: transparent;
+    color: #FFD43B;
+    padding: 4px 10px;
+    border: 1px dashed #FFD43B;
+    font-size: 0.8em;
+    font-family: monospace;
+    transition: all 0.3s ease;
+}
+
+.hw-card-inner:hover .hw-tag {
+    background: rgba(255, 212, 59, 0.1);
+    border-style: solid;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .glitch-title { font-size: 2.5em; }
+    .hw-subtitle { font-size: 1em; }
+    .hw-grid { grid-template-columns: 1fr; }
+}

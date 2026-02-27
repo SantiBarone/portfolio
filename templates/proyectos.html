@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../statics/styles.css">
+    <link rel="stylesheet" href="../statics/proyectos.css">
+    <title>BaronDev - Proyectos</title>
+</head>
+<body>
+    <navbar class="landing-bar" style="position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px);">
+        <li><a href="../index.html">❘ Home ❘</a></li>
+        <li><a href="about-me.html">❘ Sobre Mi ❘</a></li>
+        <li><a href="hardware.html">❘ Hardware ❘</a></li>
+    </navbar>
+
+    <main class="projects-container">
+        <h1 class="page-title">Proyectos de Software</h1>
+        <p class="page-subtitle">Explora mis desarrollos y aplicaciones recientes.</p>
+
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="status-badge live">Concluido</span>
+                </div>
+                <div class="project-body">
+                    <h2>Kurogane 3D</h2>
+                    <p>Sistema de gestión integral para un emprendimiento de impresión 3D. Control de inventario, ventas y clientes.</p>
+                    <div class="tech-tags">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>SQLite</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <button class="btn-primary" onclick="window.location.href='#'">Ver Detalles</button>
+                    <a href="https://github.com/SantiBarone" target="_blank" class="btn-secondary">Repositorio</a>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="status-badge wip">En Desarrollo</span>
+                </div>
+                <div class="project-body">
+                    <h2>Portfolio Web</h2>
+                    <p>Mi portafolio personal interactivo, desarrollado para exhibir mis habilidades, proyectos de software y de hardware.</p>
+                    <div class="tech-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <button class="btn-primary" onclick="window.location.href='#'">Ver Detalles</button>
+                    <a href="https://github.com/SantiBarone" target="_blank" class="btn-secondary">Repositorio</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../index.js"></script>
+</body>
+</html>
